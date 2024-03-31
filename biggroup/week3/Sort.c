@@ -51,7 +51,7 @@ void print_arr_to_file(FILE* file, int* arr, int n) {
 }
 
 void sort_file_data(const char* filename, void (*sort_function)(int[], int)) {
-    FILE* file = fopen(filename, "r");
+    FILE* file = fopen(filename, "w");
     if (file == NULL) {
         printf("Error opening file!\n");
         return;
@@ -445,8 +445,8 @@ void menu() {
                 int arr2[] = { 5, 2, 8, 4, 3, 7, 6 };
                 int n2 = sizeof(arr2) / sizeof(arr2[0]);
                 int k = 4; // 数组索引从0开始，所以第3小的数索引为2
-                quick_sort(arr2, k, n2 - 1);
-                printf("第3小的数是:%d\n",k);
+                quick_sort(arr2, 4, n2 - 1);
+                printf("第3小的数是: %d\n", k);
                 break;
             default:
                 system("cls");
